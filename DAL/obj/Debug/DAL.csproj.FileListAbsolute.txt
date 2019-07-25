@@ -1,0 +1,9 @@
+C:\Users\GJQ\Desktop\StudentManager\DAL\bin\Debug\DAL.dll
+C:\Users\GJQ\Desktop\StudentManager\DAL\bin\Debug\DAL.pdb
+C:\Users\GJQ\Desktop\StudentManager\DAL\bin\Debug\Model.dll
+C:\Users\GJQ\Desktop\StudentManager\DAL\bin\Debug\Model.pdb
+C:\Users\GJQ\Desktop\StudentManager\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\GJQ\Desktop\StudentManager\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\GJQ\Desktop\StudentManager\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\GJQ\Desktop\StudentManager\DAL\obj\Debug\DAL.dll
+C:\Users\GJQ\Desktop\StudentManager\DAL\obj\Debug\DAL.pdb

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Class1
+    /// <summary>
+    /// 学生实体类
+    /// </summary>
+    public class Student
     {
+        public int StudentId { get; set; }
+
     }
 }

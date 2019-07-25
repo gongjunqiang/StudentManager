@@ -1,0 +1,14 @@
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\bin\Debug\StudentManager.exe.config
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\bin\Debug\StudentManager.exe
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\bin\Debug\StudentManager.pdb
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\bin\Debug\BLL.dll
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\bin\Debug\Model.dll
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\bin\Debug\BLL.pdb
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\bin\Debug\Model.pdb
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.csprojAssemblyReference.cache
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.Properties.Resources.resources
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.csproj.GenerateResource.cache
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.csproj.CoreCompileInputs.cache
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.csproj.CopyComplete
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.exe
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.pdb
