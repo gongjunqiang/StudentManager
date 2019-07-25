@@ -77,14 +77,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{edb6ca78-49c3-4520-b031-3b8e6fe17208}</Project>
-      <Name>BLL</Name>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{bb862b05-00bb-43a8-858a-28fa84cdeaca}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{c21b31db-19e6-4c75-8636-7300343c419f}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
