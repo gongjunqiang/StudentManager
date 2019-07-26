@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
 
 namespace StudentManager
 {
@@ -16,7 +17,23 @@ namespace StudentManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //创建登录窗体
+
+            Application.Run(new FrmAddStudent());
+
+            //FrmLogin frmLogin = new FrmLogin();
+            //DialogResult result = frmLogin.ShowDialog();
+            //if (result == DialogResult.OK)
+            //{
+            //    Application.Run(new FrmMain());
+            //}
+            //else
+            //{
+            //    Application.Exit();
+            //}
+
         }
+        public static SysAdmin adminLogin=null;
+
     }
 }
