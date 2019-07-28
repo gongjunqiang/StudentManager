@@ -19,18 +19,18 @@ namespace StudentManager
             Application.SetCompatibleTextRenderingDefault(false);
             //创建登录窗体
 
-            Application.Run(new FrmAddStudent());
+            //Application.Run(new FrmMain());
 
-            //FrmLogin frmLogin = new FrmLogin();
-            //DialogResult result = frmLogin.ShowDialog();
-            //if (result == DialogResult.OK)
-            //{
-            //    Application.Run(new FrmMain());
-            //}
-            //else
-            //{
-            //    Application.Exit();
-            //}
+            FrmLogin frmLogin = new FrmLogin();
+            DialogResult result = frmLogin.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                Application.Run(new FrmMain());
+            }
+            else
+            {
+                Application.Exit();
+            }
 
         }
         public static SysAdmin adminLogin=null;

@@ -18,3 +18,9 @@ C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.FrmL
 C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.FrmMain.resources
 C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.FrmModifyPwd.resources
 C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.FrmAddStudent.resources
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.FrmAttendance.resources
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.FrmEditStudent.resources
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.FrmScoreManage.resources
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.FrmScoreQuery.resources
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.FrmStudentInfo.resources
+C:\Users\GJQ\Desktop\StudentManager\StudentManager\obj\Debug\StudentManager.FrmStudentManage.resources

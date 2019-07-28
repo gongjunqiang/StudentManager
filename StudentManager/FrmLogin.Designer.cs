@@ -35,9 +35,9 @@
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
             this.panel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtLoginPwd = new System.Windows.Forms.TextBox();
             this.txtLoginAccount = new System.Windows.Forms.TextBox();
+            this.txtLoginPwd = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -115,26 +115,6 @@
             this.panel.Size = new System.Drawing.Size(589, 211);
             this.panel.TabIndex = 4;
             // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(22, 42);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(345, 192);
-            this.panel2.TabIndex = 4;
-            // 
-            // txtLoginPwd
-            // 
-            this.txtLoginPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLoginPwd.Location = new System.Drawing.Point(463, 94);
-            this.txtLoginPwd.Name = "txtLoginPwd";
-            this.txtLoginPwd.Size = new System.Drawing.Size(101, 21);
-            this.txtLoginPwd.TabIndex = 2;
-            this.txtLoginPwd.Text = "123456";
-            this.txtLoginPwd.UseSystemPasswordChar = true;
-            this.txtLoginPwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtLoginPwd_KeyDown);
-            // 
             // txtLoginAccount
             // 
             this.txtLoginAccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -144,6 +124,26 @@
             this.txtLoginAccount.TabIndex = 2;
             this.txtLoginAccount.Text = "龚老师";
             this.txtLoginAccount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtLoginAccount_KeyDown);
+            // 
+            // txtLoginPwd
+            // 
+            this.txtLoginPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLoginPwd.Location = new System.Drawing.Point(463, 94);
+            this.txtLoginPwd.Name = "txtLoginPwd";
+            this.txtLoginPwd.Size = new System.Drawing.Size(101, 21);
+            this.txtLoginPwd.TabIndex = 2;
+            this.txtLoginPwd.Text = "195814";
+            this.txtLoginPwd.UseSystemPasswordChar = true;
+            this.txtLoginPwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtLoginPwd_KeyDown);
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(22, 42);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(345, 192);
+            this.panel2.TabIndex = 4;
             // 
             // label1
             // 

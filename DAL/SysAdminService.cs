@@ -16,7 +16,7 @@ namespace DAL
         /// <returns></returns>
         public SysAdmin AdminLogin(SysAdmin admin)
         {
-            var sql = "select LoginId,AdminName,LoginPwd from Admins where AdminName={0} and LoginPwd={1}";
+            var sql = "select LoginId,AdminName,LoginPwd from Admins where AdminName='{0}' and LoginPwd='{1}'";
             sql = string.Format(sql, admin.AdminName, admin.LoginPwd);
             SqlDataReader reader = SQLHelper.GetReader(sql);
             if (reader.Read())

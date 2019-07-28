@@ -82,20 +82,20 @@ namespace StudentManager
                 LoginPwd = this.txtLoginPwd.Text,
                 AdminName = this.txtLoginAccount.Text
             };
-            //admin = adminService.AdminLogin(admin);
+            admin = adminService.AdminLogin(admin);
             try
             {
-                //if (admin == null)
-                //{
-                //    MessageBox.Show("账号或密码错误!", "提示信息!");
-                //    return;
-                //}
-                //else
-                //{
+                if (admin == null)
+                {
+                    MessageBox.Show("账号或密码错误!", "提示信息!");
+                    return;
+                }
+                else
+                {
                     Program.adminLogin = admin;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
-                //}
+                }
             }
             catch (Exception ex)
             {
@@ -116,12 +116,12 @@ namespace StudentManager
                 if (this.txtLoginAccount.Text.Trim().Length != 0)
                 {
                     this.txtLoginPwd.Focus();
+
                 }
 
             }
         }
-        #endregion
-
+      
         private void TxtLoginPwd_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -129,5 +129,6 @@ namespace StudentManager
                 BtnLogin_Click(null, null);
             }
         }
+        #endregion
     }
 }

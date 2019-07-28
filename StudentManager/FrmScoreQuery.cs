@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StudentManager
 {
-    public partial class FrmScoreQuery : Form
+    public partial class FrmStudentInfo : Form
     {
-        public FrmScoreQuery()
+        public FrmStudentInfo()
         {
             InitializeComponent();
         }

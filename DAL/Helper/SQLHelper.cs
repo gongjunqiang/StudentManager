@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,7 +10,7 @@ namespace DAL
     /// </summary>
     public class SQLHelper
     {
-        public static readonly string connString = ConfigurationManager.ConnectionStrings["connString"].ToString();
+        public static readonly string connString = StringSecurity.DESDecrypt(ConfigurationManager.ConnectionStrings["connString"].ToString());
 
         /// <summary>
         /// 执行update、insert、delete等操作

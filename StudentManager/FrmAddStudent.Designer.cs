@@ -58,6 +58,7 @@
             this.btnClose.TabIndex = 29;
             this.btnClose.Text = "关闭窗口";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // btnAdd
             // 
@@ -67,6 +68,7 @@
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "确认添加";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // txtAddress
             // 
@@ -126,6 +128,8 @@
             this.txtStudentIdNo.Name = "txtStudentIdNo";
             this.txtStudentIdNo.Size = new System.Drawing.Size(198, 21);
             this.txtStudentIdNo.TabIndex = 24;
+            this.txtStudentIdNo.Text = "510722199104261879";
+            this.txtStudentIdNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtStudentIdNo_KeyDown);
             // 
             // label7
             // 
@@ -187,7 +191,6 @@
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Size = new System.Drawing.Size(35, 16);
             this.rdoMale.TabIndex = 30;
-            this.rdoMale.TabStop = true;
             this.rdoMale.Text = "男";
             this.rdoMale.UseVisualStyleBackColor = true;
             // 
@@ -198,7 +201,6 @@
             this.rdoFemale.Name = "rdoFemale";
             this.rdoFemale.Size = new System.Drawing.Size(35, 16);
             this.rdoFemale.TabIndex = 30;
-            this.rdoFemale.TabStop = true;
             this.rdoFemale.Text = "女";
             this.rdoFemale.UseVisualStyleBackColor = true;
             // 
@@ -249,6 +251,7 @@
             this.Name = "FrmAddStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[添加新学员]";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAddStudent_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
