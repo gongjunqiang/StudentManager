@@ -36,6 +36,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboClass = new System.Windows.Forms.ComboBox();
             this.dgvStudentList = new System.Windows.Forms.DataGridView();
+            this.StudentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnQuery = new CCWin.SkinControl.SkinButton();
             this.btnEdit = new CCWin.SkinControl.SkinButton();
             this.btnDelete = new CCWin.SkinControl.SkinButton();
@@ -44,12 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnQueryById = new CCWin.SkinControl.SkinButton();
             this.btnClose = new CCWin.SkinControl.SkinButton();
-            this.StudentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Birthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClassId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -105,13 +105,61 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvStudentList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvStudentList.EnableHeadersVisualStyles = false;
-            this.dgvStudentList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvStudentList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.dgvStudentList.Location = new System.Drawing.Point(13, 49);
             this.dgvStudentList.Name = "dgvStudentList";
             this.dgvStudentList.ReadOnly = true;
             this.dgvStudentList.RowTemplate.Height = 23;
             this.dgvStudentList.Size = new System.Drawing.Size(552, 204);
             this.dgvStudentList.TabIndex = 3;
+            // 
+            // StudentId
+            // 
+            this.StudentId.DataPropertyName = "StudentId";
+            this.StudentId.HeaderText = "学号";
+            this.StudentId.Name = "StudentId";
+            this.StudentId.ReadOnly = true;
+            this.StudentId.Width = 80;
+            // 
+            // StudentName
+            // 
+            this.StudentName.DataPropertyName = "StudentName";
+            this.StudentName.HeaderText = "姓名";
+            this.StudentName.Name = "StudentName";
+            this.StudentName.ReadOnly = true;
+            this.StudentName.Width = 80;
+            // 
+            // Gender
+            // 
+            this.Gender.DataPropertyName = "Gender";
+            this.Gender.HeaderText = "性别";
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            this.Gender.Width = 80;
+            // 
+            // Birthday
+            // 
+            this.Birthday.DataPropertyName = "Birthday";
+            this.Birthday.HeaderText = "出生日期";
+            this.Birthday.Name = "Birthday";
+            this.Birthday.ReadOnly = true;
+            this.Birthday.Width = 120;
+            // 
+            // ClassName
+            // 
+            this.ClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ClassName.DataPropertyName = "ClassName";
+            this.ClassName.HeaderText = "所在班级";
+            this.ClassName.Name = "ClassName";
+            this.ClassName.ReadOnly = true;
+            // 
+            // ClassId
+            // 
+            this.ClassId.DataPropertyName = "ClassId";
+            this.ClassId.HeaderText = "ClassId";
+            this.ClassId.Name = "ClassId";
+            this.ClassId.ReadOnly = true;
+            this.ClassId.Visible = false;
             // 
             // btnQuery
             // 
@@ -216,54 +264,6 @@
             this.btnClose.Text = "关闭窗口";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
-            // 
-            // StudentId
-            // 
-            this.StudentId.DataPropertyName = "StudentId";
-            this.StudentId.HeaderText = "学号";
-            this.StudentId.Name = "StudentId";
-            this.StudentId.ReadOnly = true;
-            this.StudentId.Width = 80;
-            // 
-            // StudentName
-            // 
-            this.StudentName.DataPropertyName = "StudentName";
-            this.StudentName.HeaderText = "姓名";
-            this.StudentName.Name = "StudentName";
-            this.StudentName.ReadOnly = true;
-            this.StudentName.Width = 80;
-            // 
-            // Gender
-            // 
-            this.Gender.DataPropertyName = "Gender";
-            this.Gender.HeaderText = "性别";
-            this.Gender.Name = "Gender";
-            this.Gender.ReadOnly = true;
-            this.Gender.Width = 80;
-            // 
-            // Birthday
-            // 
-            this.Birthday.DataPropertyName = "Birthday";
-            this.Birthday.HeaderText = "出生日期";
-            this.Birthday.Name = "Birthday";
-            this.Birthday.ReadOnly = true;
-            this.Birthday.Width = 120;
-            // 
-            // ClassName
-            // 
-            this.ClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ClassName.DataPropertyName = "ClassName";
-            this.ClassName.HeaderText = "所在班级";
-            this.ClassName.Name = "ClassName";
-            this.ClassName.ReadOnly = true;
-            // 
-            // ClassId
-            // 
-            this.ClassId.DataPropertyName = "ClassId";
-            this.ClassId.HeaderText = "ClassId";
-            this.ClassId.Name = "ClassId";
-            this.ClassId.ReadOnly = true;
-            this.ClassId.Visible = false;
             // 
             // FrmStudentManage
             // 
