@@ -82,7 +82,7 @@
             this.tmiModifyPwd.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tmiModifyPwd.Image = ((System.Drawing.Image)(resources.GetObject("tmiModifyPwd.Image")));
             this.tmiModifyPwd.Name = "tmiModifyPwd";
-            this.tmiModifyPwd.Size = new System.Drawing.Size(157, 22);
+            this.tmiModifyPwd.Size = new System.Drawing.Size(180, 22);
             this.tmiModifyPwd.Text = "修改密码（&C）";
             // 
             // tmiClose
@@ -90,7 +90,7 @@
             this.tmiClose.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tmiClose.Image = ((System.Drawing.Image)(resources.GetObject("tmiClose.Image")));
             this.tmiClose.Name = "tmiClose";
-            this.tmiClose.Size = new System.Drawing.Size(157, 22);
+            this.tmiClose.Size = new System.Drawing.Size(180, 22);
             this.tmiClose.Text = "退出（&E）";
             this.tmiClose.Click += new System.EventHandler(this.TmiClose_Click);
             // 
@@ -109,7 +109,7 @@
             this.tsmiAddStudent.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tsmiAddStudent.Image = ((System.Drawing.Image)(resources.GetObject("tsmiAddStudent.Image")));
             this.tsmiAddStudent.Name = "tsmiAddStudent";
-            this.tsmiAddStudent.Size = new System.Drawing.Size(167, 22);
+            this.tsmiAddStudent.Size = new System.Drawing.Size(180, 22);
             this.tsmiAddStudent.Text = "添加学员信息(&A)";
             this.tsmiAddStudent.Click += new System.EventHandler(this.TsmiAddStudent_Click);
             // 
@@ -118,8 +118,9 @@
             this.tsmiManageStudent.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tsmiManageStudent.Image = ((System.Drawing.Image)(resources.GetObject("tsmiManageStudent.Image")));
             this.tsmiManageStudent.Name = "tsmiManageStudent";
-            this.tsmiManageStudent.Size = new System.Drawing.Size(167, 22);
+            this.tsmiManageStudent.Size = new System.Drawing.Size(180, 22);
             this.tsmiManageStudent.Text = "学员信息管理(&Q)";
+            this.tsmiManageStudent.Click += new System.EventHandler(this.TsmiManageStudent_Click);
             // 
             // 成绩管理JToolStripMenuItem
             // 
@@ -193,6 +194,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(76, 22);
             this.toolStripButton1.Text = "学员管理";
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // tsbScoreAnalysis
             // 
@@ -207,8 +209,8 @@
             this.tsbQuery.Image = ((System.Drawing.Image)(resources.GetObject("tsbQuery.Image")));
             this.tsbQuery.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbQuery.Name = "tsbQuery";
-            this.tsbQuery.Size = new System.Drawing.Size(112, 22);
-            this.tsbQuery.Text = "成绩查询与分析";
+            this.tsbQuery.Size = new System.Drawing.Size(100, 22);
+            this.tsbQuery.Text = "成绩快速查询";
             // 
             // tsbModifyPwd
             // 

@@ -72,10 +72,11 @@ namespace StudentManager
                 return;
             }
 
-            //年龄验证
+            //年龄验证:大于18而且小于30
 
-            //身份证日期与出生日期比较
+            //身份证日期与出生日期比较：对比出生日期与身份证的出生日期是否相同
 
+            //正则表达式验证身份证是否符合要求
             if (!DataValidate.IsIdentityCard(this.txtStudentIdNo.Text))
             {
                 MessageBox.Show("身份证号格式错误!","提示信息");
@@ -169,7 +170,6 @@ namespace StudentManager
                 {
                     this.txtCardNo.Focus();
                 }
-                
             }
         }
         #endregion

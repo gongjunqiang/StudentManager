@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudentManage));
             this.label1 = new System.Windows.Forms.Label();
             this.cboClass = new System.Windows.Forms.ComboBox();
@@ -38,15 +40,16 @@
             this.btnEdit = new CCWin.SkinControl.SkinButton();
             this.btnDelete = new CCWin.SkinControl.SkinButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnClose = new CCWin.SkinControl.SkinButton();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtStudentId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnQueryById = new CCWin.SkinControl.SkinButton();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnClose = new CCWin.SkinControl.SkinButton();
+            this.StudentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Birthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -73,22 +76,36 @@
             // 
             this.dgvStudentList.AllowUserToAddRows = false;
             this.dgvStudentList.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvStudentList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStudentList.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudentList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvStudentList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStudentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudentList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
+            this.StudentId,
+            this.StudentName,
+            this.Gender,
+            this.Birthday,
+            this.ClassName,
+            this.ClassId});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudentList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvStudentList.EnableHeadersVisualStyles = false;
+            this.dgvStudentList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvStudentList.Location = new System.Drawing.Point(13, 49);
             this.dgvStudentList.Name = "dgvStudentList";
             this.dgvStudentList.ReadOnly = true;
@@ -109,6 +126,7 @@
             this.btnQuery.TabIndex = 4;
             this.btnQuery.Text = "查 询";
             this.btnQuery.UseVisualStyleBackColor = false;
+            this.btnQuery.Click += new System.EventHandler(this.BtnQuery_Click);
             // 
             // btnEdit
             // 
@@ -123,6 +141,7 @@
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "修 改";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnDelete
             // 
@@ -138,6 +157,7 @@
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "删 除";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // groupBox1
             // 
@@ -151,19 +171,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "按学号精确查找";
             // 
-            // btnClose
+            // txtStudentId
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnClose.DownBack = null;
-            this.btnClose.Location = new System.Drawing.Point(490, 289);
-            this.btnClose.MouseBack = null;
-            this.btnClose.Name = "btnClose";
-            this.btnClose.NormlBack = null;
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "关闭窗口";
-            this.btnClose.UseVisualStyleBackColor = false;
+            this.txtStudentId.Location = new System.Drawing.Point(78, 25);
+            this.txtStudentId.Name = "txtStudentId";
+            this.txtStudentId.Size = new System.Drawing.Size(215, 21);
+            this.txtStudentId.TabIndex = 1;
             // 
             // label2
             // 
@@ -173,13 +186,6 @@
             this.label2.Size = new System.Drawing.Size(77, 12);
             this.label2.TabIndex = 0;
             this.label2.Text = "请输入学号：";
-            // 
-            // txtStudentId
-            // 
-            this.txtStudentId.Location = new System.Drawing.Point(78, 25);
-            this.txtStudentId.Name = "txtStudentId";
-            this.txtStudentId.Size = new System.Drawing.Size(215, 21);
-            this.txtStudentId.TabIndex = 1;
             // 
             // btnQueryById
             // 
@@ -194,41 +200,70 @@
             this.btnQueryById.TabIndex = 4;
             this.btnQueryById.Text = "提交查询";
             this.btnQueryById.UseVisualStyleBackColor = false;
+            this.btnQueryById.Click += new System.EventHandler(this.BtnQueryById_Click);
             // 
-            // Column1
+            // btnClose
             // 
-            this.Column1.HeaderText = "学号";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 80;
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnClose.DownBack = null;
+            this.btnClose.Location = new System.Drawing.Point(490, 289);
+            this.btnClose.MouseBack = null;
+            this.btnClose.Name = "btnClose";
+            this.btnClose.NormlBack = null;
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "关闭窗口";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // Column2
+            // StudentId
             // 
-            this.Column2.HeaderText = "姓名";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 80;
+            this.StudentId.DataPropertyName = "StudentId";
+            this.StudentId.HeaderText = "学号";
+            this.StudentId.Name = "StudentId";
+            this.StudentId.ReadOnly = true;
+            this.StudentId.Width = 80;
             // 
-            // Column3
+            // StudentName
             // 
-            this.Column3.HeaderText = "性别";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 80;
+            this.StudentName.DataPropertyName = "StudentName";
+            this.StudentName.HeaderText = "姓名";
+            this.StudentName.Name = "StudentName";
+            this.StudentName.ReadOnly = true;
+            this.StudentName.Width = 80;
             // 
-            // Column4
+            // Gender
             // 
-            this.Column4.HeaderText = "出生日期";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 120;
+            this.Gender.DataPropertyName = "Gender";
+            this.Gender.HeaderText = "性别";
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            this.Gender.Width = 80;
             // 
-            // Column5
+            // Birthday
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "所在班级";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.Birthday.DataPropertyName = "Birthday";
+            this.Birthday.HeaderText = "出生日期";
+            this.Birthday.Name = "Birthday";
+            this.Birthday.ReadOnly = true;
+            this.Birthday.Width = 120;
+            // 
+            // ClassName
+            // 
+            this.ClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ClassName.DataPropertyName = "ClassName";
+            this.ClassName.HeaderText = "所在班级";
+            this.ClassName.Name = "ClassName";
+            this.ClassName.ReadOnly = true;
+            // 
+            // ClassId
+            // 
+            this.ClassId.DataPropertyName = "ClassId";
+            this.ClassId.HeaderText = "ClassId";
+            this.ClassId.Name = "ClassId";
+            this.ClassId.ReadOnly = true;
+            this.ClassId.Visible = false;
             // 
             // FrmStudentManage
             // 
@@ -248,6 +283,7 @@
             this.Name = "FrmStudentManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[学员信息管理]";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmStudentManage_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -261,11 +297,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboClass;
         private System.Windows.Forms.DataGridView dgvStudentList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private CCWin.SkinControl.SkinButton btnQuery;
         private CCWin.SkinControl.SkinButton btnEdit;
         private CCWin.SkinControl.SkinButton btnDelete;
@@ -274,5 +305,11 @@
         private System.Windows.Forms.Label label2;
         private CCWin.SkinControl.SkinButton btnQueryById;
         private CCWin.SkinControl.SkinButton btnClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Birthday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassId;
     }
 }

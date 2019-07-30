@@ -122,7 +122,7 @@
             this.txtLoginAccount.Name = "txtLoginAccount";
             this.txtLoginAccount.Size = new System.Drawing.Size(101, 21);
             this.txtLoginAccount.TabIndex = 2;
-            this.txtLoginAccount.Text = "龚老师";
+            this.txtLoginAccount.Text = "龚均强";
             this.txtLoginAccount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtLoginAccount_KeyDown);
             // 
             // txtLoginPwd
@@ -190,9 +190,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "用户登录";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Frm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Frm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Frm_MouseUp);

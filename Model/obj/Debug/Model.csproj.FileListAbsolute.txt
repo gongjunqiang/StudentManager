@@ -3,3 +3,4 @@ C:\Users\GJQ\Desktop\StudentManager\Model\bin\Debug\Model.pdb
 C:\Users\GJQ\Desktop\StudentManager\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\GJQ\Desktop\StudentManager\Model\obj\Debug\Model.dll
 C:\Users\GJQ\Desktop\StudentManager\Model\obj\Debug\Model.pdb
+C:\Users\GJQ\Desktop\StudentManager\Model\obj\Debug\Model.csprojAssemblyReference.cache

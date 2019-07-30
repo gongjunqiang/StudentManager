@@ -23,14 +23,9 @@ namespace StudentManager
             this.Close();
         }
 
-
-
-
-
-        #region 菜单栏事件
+        #region 添加学员
         public static FrmAddStudent frmAddStudent = null;
-
-        //添加学员
+        //菜单栏：添加学员
         private void TsmiAddStudent_Click(object sender, EventArgs e)
         {
             if (frmAddStudent == null)
@@ -44,16 +39,43 @@ namespace StudentManager
                 frmAddStudent.WindowState = FormWindowState.Normal;
             }
         }
-        #endregion
-
-        #region 工具栏事件
-        //添加学员
+        //工具栏：添加学员
         private void TsbAddStudent_Click(object sender, EventArgs e)
         {
-            TsmiAddStudent_Click(null,null);
+            TsmiAddStudent_Click(null, null);
         }
         #endregion
 
+        #region 学员信息管理
+        public static FrmStudentManage frmStudentManage = null;
+        //菜单栏：学员信息管理
+        private void TsmiManageStudent_Click(object sender, EventArgs e)
+        {
+            if (frmStudentManage == null)
+            {
+                frmStudentManage = new FrmStudentManage();
+                frmStudentManage.Show();
+            }
+            else
+            {
+                frmStudentManage.Activate();
+                frmStudentManage.WindowState = FormWindowState.Normal;
+            }
+        }
+        //工具栏：学员信息管理
+        private void ToolStripButton1_Click(object sender, EventArgs e)
+        {
+            TsmiManageStudent_Click(null, null);
+        }
+        #endregion
+
+        #region 成绩查询与分析
+
+        #endregion
+
+        #region 成绩快速查询
+
+        #endregion
 
         #region 关闭主窗体
         private void TsbExit_Click(object sender, EventArgs e)
@@ -71,5 +93,6 @@ namespace StudentManager
         }
         #endregion
 
+      
     }
 }
