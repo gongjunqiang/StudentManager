@@ -1,6 +1,6 @@
 ﻿namespace StudentManager
 {
-    partial class FrmStudentInfo
+    partial class FrmScoreQuery
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudentInfo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmScoreQuery));
             this.dgvScoreList = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -169,7 +169,7 @@
             this.btnShowAll.Text = "显示全部成绩";
             this.btnShowAll.UseVisualStyleBackColor = true;
             // 
-            // FrmStudentInfo
+            // FrmScoreQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -184,7 +184,7 @@
             this.Controls.Add(this.dgvScoreList);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FrmStudentInfo";
+            this.Name = "FrmScoreQuery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "考试成绩快速浏览";
             ((System.ComponentModel.ISupportInitialize)(this.dgvScoreList)).EndInit();

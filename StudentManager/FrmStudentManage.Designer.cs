@@ -112,6 +112,7 @@
             this.dgvStudentList.RowTemplate.Height = 23;
             this.dgvStudentList.Size = new System.Drawing.Size(552, 204);
             this.dgvStudentList.TabIndex = 3;
+            this.dgvStudentList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvStudentList_DataBindingComplete);
             // 
             // StudentId
             // 
@@ -225,6 +226,7 @@
             this.txtStudentId.Name = "txtStudentId";
             this.txtStudentId.Size = new System.Drawing.Size(215, 21);
             this.txtStudentId.TabIndex = 1;
+            this.txtStudentId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtStudentId_KeyDown);
             // 
             // label2
             // 

@@ -15,6 +15,8 @@ namespace StudentManager
     public partial class FrmStudentManage : Form
     {
         private StudentClassService studentClassService = new StudentClassService();
+        private StudentService studentService = new StudentService();
+
         public FrmStudentManage()
         {
             InitializeComponent();
@@ -23,6 +25,8 @@ namespace StudentManager
             this.cboClass.ValueMember = "ClassId";
             this.cboClass.SelectedIndex = -1;
 
+            this.btnDelete.Enabled = false;
+            this.btnEdit.Enabled = false;
             this.dgvStudentList.AutoGenerateColumns = false;
         }
 
@@ -54,8 +58,11 @@ namespace StudentManager
                 MessageBox.Show("查询结果为空！", "提示信息");
                 return;
             }
+            this.btnDelete.Enabled = true;
+            this.btnEdit.Enabled = true;
             this.dgvStudentList.DataSource = null;
             this.dgvStudentList.DataSource = studentsList;
+            this.dgvStudentList.ClearSelection();
         }
 
         /// <summary>
@@ -65,6 +72,17 @@ namespace StudentManager
         /// <param name="e"></param>
         private void BtnEdit_Click(object sender, EventArgs e)
         {
+            var a = 1;
+            if (this.dgvStudentList.CurrentRow == null)
+            {
+                this.dgvStudentList.DataSource = null;
+                MessageBox.Show("请选择需要修改的学员！", "提示信息");
+                return;
+            }
+            int studentId = Convert.ToInt32(this.dgvStudentList.CurrentRow.Cells["StudentId"].Value);
+            StudentExt result = studentService.QueryStudentByStudengtId(studentId);
+            FrmEditStudent frmEditStudent = new FrmEditStudent(result);
+            frmEditStudent.Show();
 
         }
 
@@ -85,12 +103,43 @@ namespace StudentManager
         /// <param name="e"></param>
         private void BtnQueryById_Click(object sender, EventArgs e)
         {
+            if (this.txtStudentId.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("请输入您要查询的学号！", "提示信息");
+                return;
+            }
+            var studentId = Convert.ToInt32(this.txtStudentId.Text.Trim());
+            StudentExt result = studentService.QueryStudentByStudengtId(studentId);
+      
+            if (result == null)
+            {
+                MessageBox.Show($"没有学号为{studentId}的学生，请输入正确的学号！", "提示信息");
+                return;
+            }
 
+            else
+            {
+                FrmStudentInfo frmStudentInfo = new FrmStudentInfo(result);
+                frmStudentInfo.Show();
+            }
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TxtStudentId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                BtnQueryById_Click(null, null);
+            }
+        }
+
+        private void DgvStudentList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvStudentList.ClearSelection();
         }
     }
 }

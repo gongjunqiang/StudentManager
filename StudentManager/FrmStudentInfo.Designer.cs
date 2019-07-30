@@ -1,6 +1,6 @@
 ﻿namespace StudentManager
 {
-    partial class FrmScoreQuery
+    partial class FrmStudentInfo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmScoreQuery));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudentInfo));
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblCardNo = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
@@ -101,7 +101,7 @@
             this.lblBirthday.Name = "lblBirthday";
             this.lblBirthday.Size = new System.Drawing.Size(132, 23);
             this.lblBirthday.TabIndex = 21;
-            this.lblBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblClass
             // 
@@ -112,7 +112,7 @@
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(100, 23);
             this.lblClass.TabIndex = 20;
-            this.lblClass.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblClass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblGender
             // 
@@ -123,7 +123,7 @@
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(100, 23);
             this.lblGender.TabIndex = 19;
-            this.lblGender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStudentName
             // 
@@ -134,7 +134,7 @@
             this.lblStudentName.Name = "lblStudentName";
             this.lblStudentName.Size = new System.Drawing.Size(132, 23);
             this.lblStudentName.TabIndex = 25;
-            this.lblStudentName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStudentName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnClose
             // 
@@ -144,6 +144,7 @@
             this.btnClose.TabIndex = 18;
             this.btnClose.Text = "关闭窗口";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // label8
             // 
@@ -217,7 +218,7 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "学生姓名：";
             // 
-            // FrmScoreQuery
+            // FrmStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -242,7 +243,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmScoreQuery";
+            this.Name = "FrmStudentInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[当前学员详细信息]";
             this.ResumeLayout(false);

@@ -10,8 +10,8 @@ namespace DAL
     /// </summary>
     public class SQLHelper
     {
-        //public static readonly string connString = StringSecurity.DESDecrypt(ConfigurationManager.ConnectionStrings["connString"].ToString());
-        public static readonly string connString = ConfigurationManager.ConnectionStrings["connString"].ToString();
+        public static readonly string connString = StringSecurity.DESDecrypt(ConfigurationManager.ConnectionStrings["connString"].ToString());
+        //public static readonly string connString = ConfigurationManager.ConnectionStrings["connString"].ToString();
         /// <summary>
         /// 执行update、insert、delete等操作
         /// </summary>

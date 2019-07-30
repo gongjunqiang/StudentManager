@@ -49,16 +49,21 @@ namespace DAL
 
         }
 
-        public List<Students> QueryStudentsByClassId(StudentClass studentClass)
+        /// <summary>
+        /// 根据班级Id查询学生列表
+        /// </summary>
+        /// <param name="studentClass"></param>
+        /// <returns></returns>
+        public List<StudentExt> QueryStudentsByClassId(StudentClass studentClass)
         {
             string sql = "select StudentId,StudentName,Gender,Birthday,b.ClassId,ClassName from";
             sql+= " Students a inner join StudentClass b on a.ClassId=b.ClassId where b.ClassId={0}";
             sql = string.Format(sql, studentClass.ClassId);
-            List<Students> studentList = new List<Students>();
+            List<StudentExt> studentList = new List<StudentExt>();
             SqlDataReader reader = SQLHelper.GetReader(sql);
             while (reader.Read())
             {
-                studentList.Add( new Students
+                studentList.Add( new StudentExt
                 {
                     StudentId=Convert.ToInt32(reader["StudentId"]),
                     StudentName = reader["StudentName"].ToString(),
