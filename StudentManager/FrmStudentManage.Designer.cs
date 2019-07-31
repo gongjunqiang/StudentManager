@@ -42,6 +42,8 @@
             this.Birthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClassId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuModifyStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuery = new CCWin.SkinControl.SkinButton();
             this.btnEdit = new CCWin.SkinControl.SkinButton();
             this.btnDelete = new CCWin.SkinControl.SkinButton();
@@ -50,7 +52,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnQueryById = new CCWin.SkinControl.SkinButton();
             this.btnClose = new CCWin.SkinControl.SkinButton();
+            this.MenuDeleteStudent = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,6 +100,7 @@
             this.Birthday,
             this.ClassName,
             this.ClassId});
+            this.dgvStudentList.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -112,7 +117,9 @@
             this.dgvStudentList.RowTemplate.Height = 23;
             this.dgvStudentList.Size = new System.Drawing.Size(552, 204);
             this.dgvStudentList.TabIndex = 3;
+            this.dgvStudentList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvStudentList_CellDoubleClick);
             this.dgvStudentList.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvStudentList_DataBindingComplete);
+            this.dgvStudentList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvStudentList_KeyDown);
             // 
             // StudentId
             // 
@@ -161,6 +168,21 @@
             this.ClassId.Name = "ClassId";
             this.ClassId.ReadOnly = true;
             this.ClassId.Visible = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuModifyStudent,
+            this.MenuDeleteStudent});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 48);
+            // 
+            // MenuModifyStudent
+            // 
+            this.MenuModifyStudent.Name = "MenuModifyStudent";
+            this.MenuModifyStudent.Size = new System.Drawing.Size(148, 22);
+            this.MenuModifyStudent.Text = "修改学员信息";
+            this.MenuModifyStudent.Click += new System.EventHandler(this.MenuModifyStudent_Click);
             // 
             // btnQuery
             // 
@@ -267,6 +289,13 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // MenuDeleteStudent
+            // 
+            this.MenuDeleteStudent.Name = "MenuDeleteStudent";
+            this.MenuDeleteStudent.Size = new System.Drawing.Size(148, 22);
+            this.MenuDeleteStudent.Text = "删除学员";
+            this.MenuDeleteStudent.Click += new System.EventHandler(this.MenuDeleteStudent_Click);
+            // 
             // FrmStudentManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -287,6 +316,7 @@
             this.Text = "[学员信息管理]";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmStudentManage_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -313,5 +343,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Birthday;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassId;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem MenuModifyStudent;
+        private System.Windows.Forms.ToolStripMenuItem MenuDeleteStudent;
     }
 }

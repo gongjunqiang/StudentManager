@@ -30,8 +30,8 @@ namespace StudentManager
             this.txtStudentId.Text = student.StudentId.ToString();
             this.txtStudentName.Text = student.StudentName;
             this.cboClassName.SelectedValue = student.ClassId;
-            //this.t.Text = student.Birthday.ToShortDateString();
-  
+            this.dtpBirthday.Text = student.Birthday.ToShortDateString();
+
             this.txtStudentIdNo.Text = student.StudentIdNo;
             this.txtCardNo.Text = student.CardNo;
             this.txtPhoneNumber.Text = student.PhoneNumber;
@@ -49,6 +49,11 @@ namespace StudentManager
             }
         }
 
+        /// <summary>
+        /// 确认修改学员信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             Students student = new Students
@@ -65,26 +70,46 @@ namespace StudentManager
                 ClassId = Convert.ToInt32(this.cboClassName.SelectedValue),
             };
 
-
             var isIdNoExisten = studentService.IsIdNoExisten(student.StudentIdNo, student.StudentId);
-
             if (isIdNoExisten)
             {
                 MessageBox.Show("身份证号重复!", "提示信息");
+                this.txtStudentIdNo.Focus();
+                this.txtStudentIdNo.SelectAll();
                 return;
             }
             var result = studentService.ModifyStudent(student);
 
-            if (result == 1)
+            try
             {
-                MessageBox.Show("学员信息修改成功!", "提示信息");
+                if (result == 1)
+                {
+                    MessageBox.Show("学员信息修改成功!", "提示信息");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("学员信息修改失败!", "提示信息");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("学员信息修改失败!", "提示信息");
 
+                throw ex;
             }
+            
 
+        }
+
+        /// <summary>
+        /// 关闭该窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

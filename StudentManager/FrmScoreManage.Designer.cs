@@ -34,12 +34,7 @@
             this.cbbClass = new System.Windows.Forms.ComboBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.dgvScoreList = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbInfo = new System.Windows.Forms.GroupBox();
             this.LblDBAvg = new System.Windows.Forms.Label();
             this.LblCSharpAvg = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
@@ -51,8 +46,16 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblList = new System.Windows.Forms.ListBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.StudentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CSharp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SQLServerDB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UpdateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScoreList)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gbInfo.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +85,7 @@
             this.btnStart.TabIndex = 2;
             this.btnStart.Text = "统计全校考试信息";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);
             // 
             // dgvScoreList
             // 
@@ -98,11 +102,14 @@
             this.dgvScoreList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvScoreList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvScoreList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
+            this.StudentId,
+            this.Id,
+            this.ClassId,
+            this.StudentName,
+            this.ClassName,
+            this.CSharp,
+            this.SQLServerDB,
+            this.UpdateTime});
             this.dgvScoreList.Location = new System.Drawing.Point(15, 49);
             this.dgvScoreList.Name = "dgvScoreList";
             this.dgvScoreList.ReadOnly = true;
@@ -110,57 +117,22 @@
             this.dgvScoreList.Size = new System.Drawing.Size(481, 150);
             this.dgvScoreList.TabIndex = 3;
             // 
-            // Column1
+            // gbInfo
             // 
-            this.Column1.HeaderText = "学号";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 80;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "姓名";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 80;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "班级";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 80;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "C#成绩";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 80;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "数据库成绩";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.LblDBAvg);
-            this.groupBox1.Controls.Add(this.LblCSharpAvg);
-            this.groupBox1.Controls.Add(this.lblCount);
-            this.groupBox1.Controls.Add(this.lblAttendCount);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(15, 210);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(288, 110);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "全校考试成绩统计";
+            this.gbInfo.Controls.Add(this.LblDBAvg);
+            this.gbInfo.Controls.Add(this.LblCSharpAvg);
+            this.gbInfo.Controls.Add(this.lblCount);
+            this.gbInfo.Controls.Add(this.lblAttendCount);
+            this.gbInfo.Controls.Add(this.label7);
+            this.gbInfo.Controls.Add(this.label3);
+            this.gbInfo.Controls.Add(this.label6);
+            this.gbInfo.Controls.Add(this.label2);
+            this.gbInfo.Location = new System.Drawing.Point(15, 210);
+            this.gbInfo.Name = "gbInfo";
+            this.gbInfo.Size = new System.Drawing.Size(288, 110);
+            this.gbInfo.TabIndex = 4;
+            this.gbInfo.TabStop = false;
+            this.gbInfo.Text = "全校考试成绩统计";
             // 
             // LblDBAvg
             // 
@@ -265,6 +237,71 @@
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "关闭按钮";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
+            // StudentId
+            // 
+            this.StudentId.DataPropertyName = "StudentId";
+            this.StudentId.HeaderText = "学号";
+            this.StudentId.Name = "StudentId";
+            this.StudentId.ReadOnly = true;
+            this.StudentId.Width = 80;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "ScoreId";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // ClassId
+            // 
+            this.ClassId.DataPropertyName = "ClassId";
+            this.ClassId.HeaderText = "ClassId";
+            this.ClassId.Name = "ClassId";
+            this.ClassId.ReadOnly = true;
+            this.ClassId.Visible = false;
+            // 
+            // StudentName
+            // 
+            this.StudentName.DataPropertyName = "StudentName";
+            this.StudentName.HeaderText = "姓名";
+            this.StudentName.Name = "StudentName";
+            this.StudentName.ReadOnly = true;
+            this.StudentName.Width = 80;
+            // 
+            // ClassName
+            // 
+            this.ClassName.DataPropertyName = "ClassName";
+            this.ClassName.HeaderText = "班级";
+            this.ClassName.Name = "ClassName";
+            this.ClassName.ReadOnly = true;
+            this.ClassName.Width = 80;
+            // 
+            // CSharp
+            // 
+            this.CSharp.DataPropertyName = "CSharp";
+            this.CSharp.HeaderText = "C#成绩";
+            this.CSharp.Name = "CSharp";
+            this.CSharp.ReadOnly = true;
+            this.CSharp.Width = 80;
+            // 
+            // SQLServerDB
+            // 
+            this.SQLServerDB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SQLServerDB.DataPropertyName = "SQLServerDB";
+            this.SQLServerDB.HeaderText = "数据库成绩";
+            this.SQLServerDB.Name = "SQLServerDB";
+            this.SQLServerDB.ReadOnly = true;
+            // 
+            // UpdateTime
+            // 
+            this.UpdateTime.DataPropertyName = "UpdateTime";
+            this.UpdateTime.HeaderText = "UpdateTime";
+            this.UpdateTime.Name = "UpdateTime";
+            this.UpdateTime.ReadOnly = true;
+            this.UpdateTime.Visible = false;
             // 
             // FrmScoreManage
             // 
@@ -272,7 +309,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 367);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbInfo);
             this.Controls.Add(this.dgvScoreList);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnStart);
@@ -284,9 +321,10 @@
             this.Name = "FrmScoreManage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[成绩查询]";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmScoreManage_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvScoreList)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbInfo.ResumeLayout(false);
+            this.gbInfo.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -299,12 +337,7 @@
         private System.Windows.Forms.ComboBox cbbClass;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.DataGridView dgvScoreList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbInfo;
         private System.Windows.Forms.Label LblDBAvg;
         private System.Windows.Forms.Label LblCSharpAvg;
         private System.Windows.Forms.Label lblCount;
@@ -316,5 +349,13 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox lblList;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CSharp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SQLServerDB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UpdateTime;
     }
 }

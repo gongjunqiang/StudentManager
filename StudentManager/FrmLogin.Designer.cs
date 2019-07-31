@@ -122,7 +122,7 @@
             this.txtLoginAccount.Name = "txtLoginAccount";
             this.txtLoginAccount.Size = new System.Drawing.Size(101, 21);
             this.txtLoginAccount.TabIndex = 2;
-            this.txtLoginAccount.Text = "龚均强";
+            this.txtLoginAccount.Text = "龚老师";
             this.txtLoginAccount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtLoginAccount_KeyDown);
             // 
             // txtLoginPwd

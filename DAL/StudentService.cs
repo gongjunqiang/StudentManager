@@ -70,8 +70,7 @@ namespace DAL
         }
         #endregion
 
-        #region 根基学员id查询学员信息
-
+        #region 查询学员
         /// <summary>
         /// 根基学员id查询学员信息
         /// </summary>
@@ -139,13 +138,13 @@ namespace DAL
         }
 
         /// <summary>
-        /// 判断身份证号码是否已经存在
+        /// 判断身份证号码是否已经存在（修改学员信息的时候）
         /// </summary>
         /// <param name="studentIdNo"></param>
         /// <returns></returns>
         public bool IsIdNoExisten(string studentIdNo,int studentId)
         {
-            string sql = "select count(1) from Students where StudentIdNo='{0}' and StudentId={1}";
+            string sql = "select count(1) from Students where StudentIdNo='{0}' and StudentId<>{1}";
             sql = string.Format(sql, studentIdNo, studentId);
             int count = Convert.ToInt32(SQLHelper.GetSingalResulrt(sql));
             //if (count == 1)
@@ -158,6 +157,45 @@ namespace DAL
             //}
 
             return count == 1 ? true : false;
+        }
+
+        #endregion
+
+        #region 删除学员
+        /// <summary>
+        /// 根据学员Id删除学员
+        /// </summary>
+        /// <param name="studengId"></param>
+        /// <returns></returns>
+        public int DeleteStudentById(int studengId)
+        {
+            string sql = "delete from Students where StudentId=@studengId";
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@studengId",studengId)
+            };
+            try
+            {
+                return SQLHelper.Update(sql, sqlParameters);
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 547)
+                {
+                    throw new Exception("该学号被其他数据表引用，不能直接删除！");
+                }
+                else
+                {
+                    throw new Exception("数据库异常，异常信息："+ex.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+       
         }
 
         #endregion

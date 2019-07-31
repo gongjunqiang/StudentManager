@@ -34,7 +34,7 @@
             this.rdoFemale = new System.Windows.Forms.RadioButton();
             this.rdoMale = new System.Windows.Forms.RadioButton();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCardNo = new System.Windows.Forms.TextBox();
@@ -100,16 +100,17 @@
             this.btnClose.TabIndex = 47;
             this.btnClose.Text = "关闭窗口";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // btnAdd
+            // btnModify
             // 
-            this.btnAdd.Location = new System.Drawing.Point(104, 350);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 46;
-            this.btnAdd.Text = "确认修改";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            this.btnModify.Location = new System.Drawing.Point(104, 350);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(75, 23);
+            this.btnModify.TabIndex = 46;
+            this.btnModify.Text = "确认修改";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // txtAddress
             // 
@@ -251,7 +252,7 @@
             this.Controls.Add(this.rdoFemale);
             this.Controls.Add(this.rdoMale);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnModify);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtCardNo);
@@ -284,7 +285,7 @@
         private System.Windows.Forms.RadioButton rdoFemale;
         private System.Windows.Forms.RadioButton rdoMale;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCardNo;

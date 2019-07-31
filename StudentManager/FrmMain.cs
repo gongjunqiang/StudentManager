@@ -15,7 +15,7 @@ namespace StudentManager
         public FrmMain()
         {
             InitializeComponent();
-            this.lblCurrentUser.Text = Program.adminLogin.AdminName+"]";
+            this.lblCurrentUser.Text = Program.adminLogin.AdminName + "]";
         }
 
         private void TmiClose_Click(object sender, EventArgs e)
@@ -70,7 +70,25 @@ namespace StudentManager
         #endregion
 
         #region 成绩查询与分析
+        public static FrmScoreManage frmScoreManage = null;
+        private void TsmiQueryAndAnalysis_Click(object sender, EventArgs e)
+        {
+            if (frmScoreManage == null)
+            {
+                frmScoreManage = new FrmScoreManage();
+                frmScoreManage.Show();
+            }
+            else
+                frmScoreManage.Activate();
+                frmScoreManage.WindowState = FormWindowState.Normal;
+        }
+        private void TsbScoreAnalysis_Click(object sender, EventArgs e)
+        {
+            TsmiQueryAndAnalysis_Click(null, null);
+        }
+    
 
+    
         #endregion
 
         #region 成绩快速查询
@@ -91,8 +109,9 @@ namespace StudentManager
                 e.Cancel = true;
             }
         }
-        #endregion
 
-      
+
+        #endregion
     }
 }
+    

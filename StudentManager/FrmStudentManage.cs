@@ -25,8 +25,6 @@ namespace StudentManager
             this.cboClass.ValueMember = "ClassId";
             this.cboClass.SelectedIndex = -1;
 
-            this.btnDelete.Enabled = false;
-            this.btnEdit.Enabled = false;
             this.dgvStudentList.AutoGenerateColumns = false;
         }
 
@@ -58,8 +56,6 @@ namespace StudentManager
                 MessageBox.Show("查询结果为空！", "提示信息");
                 return;
             }
-            this.btnDelete.Enabled = true;
-            this.btnEdit.Enabled = true;
             this.dgvStudentList.DataSource = null;
             this.dgvStudentList.DataSource = studentsList;
             this.dgvStudentList.ClearSelection();
@@ -72,19 +68,26 @@ namespace StudentManager
         /// <param name="e"></param>
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            var a = 1;
             if (this.dgvStudentList.CurrentRow == null)
             {
-                this.dgvStudentList.DataSource = null;
                 MessageBox.Show("请选择需要修改的学员！", "提示信息");
                 return;
             }
             int studentId = Convert.ToInt32(this.dgvStudentList.CurrentRow.Cells["StudentId"].Value);
             StudentExt result = studentService.QueryStudentByStudengtId(studentId);
             FrmEditStudent frmEditStudent = new FrmEditStudent(result);
-            frmEditStudent.Show();
-
+            frmEditStudent.ShowDialog();
+            if (frmEditStudent.DialogResult == DialogResult.OK)
+            {
+                BtnQuery_Click(null, null);//同步刷新
+            }
         }
+
+        private void MenuModifyStudent_Click(object sender, EventArgs e)
+        {
+            BtnEdit_Click(null,null);
+        }
+
 
         /// <summary>
         /// 删除学员
@@ -93,7 +96,35 @@ namespace StudentManager
         /// <param name="e"></param>
         private void BtnDelete_Click(object sender, EventArgs e)
         {
+            if (this.dgvStudentList.CurrentRow == null)
+            {
+                MessageBox.Show("请选择需要删除的学员！", "提示信息");
+                return;
+            }
+            string studentName = this.dgvStudentList.CurrentRow.Cells["StudentName"].Value.ToString();
+            int studentId = Convert.ToInt32(this.dgvStudentList.CurrentRow.Cells["StudentId"].Value);
+            //删除确认
+            DialogResult dialogResult = MessageBox.Show($"确认删除学员 [{studentName}] 吗？", "确认删除",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
 
+            if (dialogResult == DialogResult.Cancel)
+            {
+                return;
+            }
+            try
+            {
+                var result = studentService.DeleteStudentById(studentId);
+                if (result == 1)
+                {
+                    BtnQuery_Click(null, null);
+                    MessageBox.Show("删除成功！", "提示信息");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("删除失败！", "提示信息");
+            }
+           
         }
 
         /// <summary>
@@ -116,7 +147,6 @@ namespace StudentManager
                 MessageBox.Show($"没有学号为{studentId}的学生，请输入正确的学号！", "提示信息");
                 return;
             }
-
             else
             {
                 FrmStudentInfo frmStudentInfo = new FrmStudentInfo(result);
@@ -140,6 +170,39 @@ namespace StudentManager
         private void DgvStudentList_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dgvStudentList.ClearSelection();
+        }
+
+        #region 菜单删除与修改学员事件
+        private void DgvStudentList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dgvStudentList.CurrentRow != null)
+            {
+                var studentId = this.dgvStudentList.CurrentRow.Cells["StudentId"].Value.ToString();
+                this.txtStudentId.Text = studentId;
+                BtnQueryById_Click(null, null);
+            }
+        }
+
+        private void MenuDeleteStudent_Click(object sender, EventArgs e)
+        {
+            if (this.dgvStudentList.CurrentRow != null)
+            {
+                BtnDelete_Click(null, null);
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// 通过键盘Delete键出发删除时间
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DgvStudentList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                BtnDelete_Click(null,null);
+            }
         }
     }
 }

@@ -24,7 +24,6 @@ namespace Model
         public int ClassId { get; set; }
 
 
-        //扩展属性
-        public string ClassName { get; set; }
+
     }
 }
