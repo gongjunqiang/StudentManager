@@ -42,17 +42,18 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lblAmTime = new System.Windows.Forms.Label();
             this.lblPmTime = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblClassName = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblStudentId = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.txtCarNm = new System.Windows.Forms.TextBox();
+            this.lblResult = new System.Windows.Forms.Label();
             this.skinButton1 = new CCWin.SkinControl.SkinButton();
+            this.timer_Click = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblYear
@@ -128,9 +129,9 @@
             this.lblTime.ForeColor = System.Drawing.Color.Red;
             this.lblTime.Location = new System.Drawing.Point(325, 22);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(151, 30);
+            this.lblTime.Size = new System.Drawing.Size(130, 30);
             this.lblTime.TabIndex = 0;
-            this.lblTime.Text = "12：30：30";
+            this.lblTime.Text = "12:30:30";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
@@ -150,7 +151,7 @@
             this.lblWeek.ForeColor = System.Drawing.Color.Red;
             this.lblWeek.Location = new System.Drawing.Point(551, 22);
             this.lblWeek.Name = "lblWeek";
-            this.lblWeek.Size = new System.Drawing.Size(43, 30);
+            this.lblWeek.Size = new System.Drawing.Size(51, 30);
             this.lblWeek.TabIndex = 0;
             this.lblWeek.Text = "07";
             this.lblWeek.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -189,16 +190,16 @@
             this.lblPmTime.Text = "13：00--17：30";
             this.lblPmTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblName
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(82, 150);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 30);
-            this.label1.TabIndex = 2;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblName.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.lblName.ForeColor = System.Drawing.Color.Black;
+            this.lblName.Location = new System.Drawing.Point(82, 150);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(139, 30);
+            this.lblName.TabIndex = 2;
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -220,16 +221,16 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "学号";
             // 
-            // label5
+            // lblClassName
             // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(551, 150);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 30);
-            this.label5.TabIndex = 2;
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblClassName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblClassName.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.lblClassName.ForeColor = System.Drawing.Color.Black;
+            this.lblClassName.Location = new System.Drawing.Point(551, 150);
+            this.lblClassName.Name = "lblClassName";
+            this.lblClassName.Size = new System.Drawing.Size(139, 30);
+            this.lblClassName.TabIndex = 2;
+            this.lblClassName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
             // 
@@ -241,16 +242,16 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "班级";
             // 
-            // label11
+            // lblStudentId
             // 
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.label11.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(316, 150);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(139, 30);
-            this.label11.TabIndex = 2;
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStudentId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblStudentId.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.lblStudentId.ForeColor = System.Drawing.Color.Black;
+            this.lblStudentId.Location = new System.Drawing.Point(316, 150);
+            this.lblStudentId.Name = "lblStudentId";
+            this.lblStudentId.Size = new System.Drawing.Size(139, 30);
+            this.lblStudentId.TabIndex = 2;
+            this.lblStudentId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
@@ -272,26 +273,26 @@
             this.label13.TabIndex = 3;
             this.label13.Text = "卡号";
             // 
-            // textBox1
+            // txtCarNm
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(87, 214);
-            this.textBox1.MinimumSize = new System.Drawing.Size(0, 30);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 30);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "12312312";
+            this.txtCarNm.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.txtCarNm.Location = new System.Drawing.Point(87, 214);
+            this.txtCarNm.MinimumSize = new System.Drawing.Size(4, 30);
+            this.txtCarNm.Multiline = true;
+            this.txtCarNm.Name = "txtCarNm";
+            this.txtCarNm.Size = new System.Drawing.Size(134, 30);
+            this.txtCarNm.TabIndex = 4;
+            this.txtCarNm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox1_KeyDown);
             // 
-            // label14
+            // lblResult
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(325, 215);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(113, 29);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "打卡信息";
+            this.lblResult.AutoSize = true;
+            this.lblResult.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.lblResult.Location = new System.Drawing.Point(325, 215);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(113, 29);
+            this.lblResult.TabIndex = 3;
+            this.lblResult.Text = "打卡信息";
             // 
             // skinButton1
             // 
@@ -307,6 +308,13 @@
             this.skinButton1.TabIndex = 5;
             this.skinButton1.Text = "结束打卡";
             this.skinButton1.UseVisualStyleBackColor = false;
+            this.skinButton1.Click += new System.EventHandler(this.SkinButton1_Click);
+            // 
+            // timer_Click
+            // 
+            this.timer_Click.Enabled = true;
+            this.timer_Click.Interval = 1000;
+            this.timer_Click.Tick += new System.EventHandler(this.Timer_Click_Tick);
             // 
             // FrmAttendance
             // 
@@ -314,16 +322,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 271);
             this.Controls.Add(this.skinButton1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCarNm);
             this.Controls.Add(this.lblPmTime);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblStudentId);
+            this.Controls.Add(this.lblClassName);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblAmTime);
@@ -341,6 +349,7 @@
             this.Name = "FrmAttendance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "[考勤打卡]";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAttendance_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,16 +369,17 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblAmTime;
         private System.Windows.Forms.Label lblPmTime;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblClassName;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblStudentId;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtCarNm;
+        private System.Windows.Forms.Label lblResult;
         private CCWin.SkinControl.SkinButton skinButton1;
+        private System.Windows.Forms.Timer timer_Click;
     }
 }

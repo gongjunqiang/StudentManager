@@ -83,11 +83,6 @@ namespace StudentManager
             }
         }
 
-        private void MenuModifyStudent_Click(object sender, EventArgs e)
-        {
-            BtnEdit_Click(null,null);
-        }
-
 
         /// <summary>
         /// 删除学员
@@ -183,6 +178,12 @@ namespace StudentManager
             }
         }
 
+        private void MenuModifyStudent_Click(object sender, EventArgs e)
+        {
+            BtnEdit_Click(null, null);
+        }
+
+
         private void MenuDeleteStudent_Click(object sender, EventArgs e)
         {
             if (this.dgvStudentList.CurrentRow != null)
@@ -193,7 +194,7 @@ namespace StudentManager
         #endregion
 
         /// <summary>
-        /// 通过键盘Delete键出发删除时间
+        /// 通过键盘Delete键出发删除学员
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

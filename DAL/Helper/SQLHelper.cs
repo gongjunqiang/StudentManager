@@ -86,5 +86,33 @@ namespace DAL
                 throw new Exception("方法public static SqlDataReader GetReader：" + ex.Message);
             }
         }
+
+        /// <summary>
+        /// 执行查询，返回一个数据集
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
+        public static DataSet GetDataSet(string sql)
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);//创建数据适配器
+            DataSet ds = new DataSet();//创建一个内存数据集
+            try
+            {
+                conn.Open();
+                da.Fill(ds,"classInfo");//填充数据集
+                return ds;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

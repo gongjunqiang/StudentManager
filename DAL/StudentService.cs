@@ -70,17 +70,36 @@ namespace DAL
         }
         #endregion
 
-        #region 查询学员
+        #region 查询学员[根据学员Id与CardNo]
+
         /// <summary>
         /// 根基学员id查询学员信息
         /// </summary>
-        /// <param name="studentId"></param>
+        /// <param name="cardNo"></param>
         /// <returns></returns>
         public StudentExt QueryStudentByStudengtId(int studentId)
         {
+            string whereSql = $" where StudentId={studentId}";
+            return GetStudent(whereSql);
+        }
+
+
+        /// <summary>
+        /// 学员打卡获取学员信息
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <returns></returns>
+        public StudentExt GetStudentInfoByCardNo(string cardNo)
+        {
+            string whereSql = $" where CardNo='{cardNo}'";
+            return GetStudent(whereSql);
+        }
+
+        private StudentExt GetStudent(string whereSql)
+        {
             string sql = "select StudentId,StudentName,Gender,Birthday,StudentIdNo,Age,PhoneNumber,StudentAddress,CardNo,b.ClassId,ClassName from";
-            sql += " Students a inner join StudentClass b on a.ClassId=b.ClassId where StudentId={0}";
-            sql = string.Format(sql,studentId);
+            sql += " Students a inner join StudentClass b on a.ClassId=b.ClassId";
+            sql += whereSql;
             StudentExt studentExt = null;
             SqlDataReader reader = SQLHelper.GetReader(sql);
             if (reader.Read())

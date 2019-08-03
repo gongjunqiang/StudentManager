@@ -109,6 +109,7 @@
             this.btnModify.TabIndex = 13;
             this.btnModify.Text = "确认修改";
             this.btnModify.UseVisualStyleBackColor = false;
+            this.btnModify.Click += new System.EventHandler(this.BtnModify_Click);
             // 
             // btnCancel
             // 
@@ -123,6 +124,7 @@
             this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "取 消";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // FrmModifyPwd
             // 
@@ -143,6 +145,7 @@
             this.Name = "FrmModifyPwd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "修改登录密码";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmModifyPwd_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

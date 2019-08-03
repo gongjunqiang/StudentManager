@@ -41,8 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attendance.cs" />
     <Compile Include="Ext\StudentExt.cs" />
-    <Compile Include="ScoreListExt.cs" />
+    <Compile Include="Ext\ScoreListExt.cs" />
     <Compile Include="SysAdmin.cs" />
     <Compile Include="ScoreList.cs" />
     <Compile Include="Students.cs" />

@@ -15,6 +15,7 @@ namespace DAL
     /// </summary>
     public class ScoreListService
     {
+        #region 查询成绩
         /// <summary>
         /// 查询学员成绩
         /// </summary>
@@ -93,6 +94,23 @@ namespace DAL
             }
             return absentStudentNameList;
         }
+        #endregion
 
+        #region 基于数据集查询成绩
+        /// <summary>
+        /// 获取所有的考试成绩（存储再DataSet中）
+        /// </summary>
+        /// <returns></returns>
+        public DataSet GetScore()
+        {
+            StringBuilder sql = new StringBuilder();
+            sql.Append("select Students.StudentId, Students.StudentName, StudentClass.ClassName, StudentClass.ClassId,");
+            sql.Append("ScoreList.CSharp,ScoreList.SQLServerDB from StudentClass inner join Students");
+            sql.Append(" on StudentClass.ClassId=Students.ClassId inner join ScoreList on Students.StudentId=ScoreList.StudentId");
+            return SQLHelper.GetDataSet(sql.ToString());
+
+        }
+
+        #endregion
     }
 }

@@ -148,6 +148,7 @@
             this.tsmiQuery.Name = "tsmiQuery";
             this.tsmiQuery.Size = new System.Drawing.Size(180, 22);
             this.tsmiQuery.Text = "成绩快速查询(&S)";
+            this.tsmiQuery.Click += new System.EventHandler(this.TsmiQuery_Click);
             // 
             // 考勤管理AToolStripMenuItem
             // 
@@ -164,6 +165,7 @@
             this.tsmi_Card.Name = "tsmi_Card";
             this.tsmi_Card.Size = new System.Drawing.Size(140, 22);
             this.tsmi_Card.Text = "考勤打卡(&R)";
+            this.tsmi_Card.Click += new System.EventHandler(this.Tsmi_Card_Click);
             // 
             // menuStrip1
             // 
@@ -213,6 +215,7 @@
             this.tsbQuery.Name = "tsbQuery";
             this.tsbQuery.Size = new System.Drawing.Size(100, 22);
             this.tsbQuery.Text = "成绩快速查询";
+            this.tsbQuery.Click += new System.EventHandler(this.TsbQuery_Click);
             // 
             // tsbModifyPwd
             // 
@@ -221,6 +224,7 @@
             this.tsbModifyPwd.Name = "tsbModifyPwd";
             this.tsbModifyPwd.Size = new System.Drawing.Size(76, 22);
             this.tsbModifyPwd.Text = "修改密码";
+            this.tsbModifyPwd.Click += new System.EventHandler(this.TsbModifyPwd_Click);
             // 
             // tsbExit
             // 

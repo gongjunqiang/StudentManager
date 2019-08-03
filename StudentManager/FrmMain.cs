@@ -86,14 +86,70 @@ namespace StudentManager
         {
             TsmiQueryAndAnalysis_Click(null, null);
         }
-    
 
-    
+
+
         #endregion
 
         #region 成绩快速查询
+        public static FrmScoreQuery frmScoreQuery = null;
+        private void TsmiQuery_Click(object sender, EventArgs e)
+        {
+            if (frmScoreQuery == null)
+            {
+                frmScoreQuery = new FrmScoreQuery();
+                frmScoreQuery.ShowDialog();
+            }
+            else
+            {
+                frmScoreQuery.Activate();
+                frmScoreQuery.WindowState = FormWindowState.Normal;
+            }
 
+        }
+
+        private void TsbQuery_Click(object sender, EventArgs e)
+        {
+            TsmiQuery_Click(null,null);
+        }
         #endregion
+
+        #region 修改密码
+        public static FrmModifyPwd frmModifyPwd = null;
+        private void TsbModifyPwd_Click(object sender, EventArgs e)
+        {
+            if (frmModifyPwd == null)
+            {
+                frmModifyPwd = new FrmModifyPwd();
+                frmModifyPwd.ShowDialog();
+            }
+            else
+            {
+                frmModifyPwd.Activate();
+                frmModifyPwd.WindowState = FormWindowState.Normal;
+            }
+        }
+        #endregion
+
+        #region 考勤管理
+        public static FrmAttendance frmAttendance = null;
+        private void Tsmi_Card_Click(object sender, EventArgs e)
+        {
+            if (frmAttendance == null)
+            {
+                frmAttendance = new FrmAttendance();
+                frmAttendance.ShowDialog();
+            }
+            else
+            {
+                frmAttendance.Activate();
+                frmAttendance.WindowState = FormWindowState.Normal;
+            }
+
+        }
+        #endregion
+
+
 
         #region 关闭主窗体
         private void TsbExit_Click(object sender, EventArgs e)
@@ -111,7 +167,11 @@ namespace StudentManager
         }
 
 
+
+
         #endregion
+
+      
     }
 }
     

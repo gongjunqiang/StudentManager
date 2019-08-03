@@ -32,6 +32,18 @@ namespace DAL
             return admin;
         }
 
-
+        public int ModifyPwd(SysAdmin admin)
+        {
+            var sql = "update Admins set LoginPwd={0} where LoginId={1}";
+            sql = string.Format(sql, admin.LoginPwd, admin.LoginId);
+            try
+            {
+                return SQLHelper.Update(sql);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("数据异常，异常信息："+ex.Message);
+            }
+        }
     }
 }

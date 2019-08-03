@@ -9,3 +9,9 @@ C:\Users\GJQ\Desktop\C#\StudentManager\Model\bin\Debug\Model.pdb
 C:\Users\GJQ\Desktop\C#\StudentManager\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\GJQ\Desktop\C#\StudentManager\Model\obj\Debug\Model.dll
 C:\Users\GJQ\Desktop\C#\StudentManager\Model\obj\Debug\Model.pdb
+E:\C#录播课程视频\C#\common\StudentManager\Model\bin\Debug\Model.dll
+E:\C#录播课程视频\C#\common\StudentManager\Model\bin\Debug\Model.pdb
+E:\C#录播课程视频\C#\common\StudentManager\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\C#录播课程视频\C#\common\StudentManager\Model\obj\Debug\Model.dll
+E:\C#录播课程视频\C#\common\StudentManager\Model\obj\Debug\Model.pdb
+E:\C#录播课程视频\C#\common\StudentManager\Model\obj\Debug\Model.csprojAssemblyReference.cache

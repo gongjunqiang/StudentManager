@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 namespace Model
 {
     /// <summary>
-    /// 管理员实体类
+    /// 学员打卡实体类
     /// </summary>
-    public class SysAdmin
+    public class Attendance
     {
-        public int LoginId { get; set; }
-        public string AdminName { get; set; }
-        public string LoginPwd { get; set; }
-
-
+        public int Id { get; set; }
+        public string CardNo { get; set; }
+        public DateTime DTime { get; set; }
     }
 }

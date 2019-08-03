@@ -77,5 +77,15 @@ namespace DAL
             return studentList;
         }
 
+        /// <summary>
+        /// 获取所有的班级，存放再数据集DataSet中
+        /// </summary>
+        /// <returns></returns>
+        public DataSet GetAllClass()
+        {
+            string sql = "select ClassId,ClassName from StudentClass";
+            return SQLHelper.GetDataSet(sql);
+        }
+
     }
 }
